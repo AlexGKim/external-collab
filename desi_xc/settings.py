@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'desi_xc.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db.sqlite3',
+        'NAME': 'mydatabase',
 #        'ENGINE': 'django_postgres_extensions.backends.postgresql',
 #        'NAME': 'db',
 #        'USER': 'postgres',
