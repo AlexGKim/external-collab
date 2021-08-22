@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '+kk6r%)a7-6i!p9fbsa=sl)ogm8*fo+n02$m9u6(4lgad=6pao'
+SECRET_KEY = 'a@28l4agewe7v5yc-_5(y(t*k_iz9mgl&(1=6jimfn4n+$krp-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -37,10 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-#    'django.contrib.postgres',
-#    'django_postgres_extensions',
-    'django_tables2',
-    'xc.apps.XcConfig'
 ]
 
 MIDDLEWARE = [
@@ -80,13 +76,7 @@ WSGI_APPLICATION = 'desi_xc.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
-#        'ENGINE': 'django_postgres_extensions.backends.postgresql',
-#        'NAME': 'db',
-#        'USER': 'postgres',
-#        'PASSWORD': 'postgres',
-#        'HOST': '127.0.0.1',
-#        'PORT': 5432,
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -115,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'US/Pacific'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -128,4 +118,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
