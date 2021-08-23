@@ -1,4 +1,5 @@
 Django~=2.2.4
 django-tables2
+python-decouple
 #psycopg2
 #django_postgres_extensions
