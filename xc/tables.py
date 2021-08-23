@@ -23,4 +23,4 @@ class ProposalTable(tables.Table):
     class Meta:
         model = Proposal
         template_name = "django_tables2/bootstrap.html"
-        fields = ("title","collaborators","sponsor","granted_date","duration","access","active","proposal")
+        fields = ("title","collaborators","project","sponsor","granted_date","duration","access","active","proposal")
