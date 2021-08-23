@@ -33,6 +33,10 @@ class Command(BaseCommand):
             "last_name": "Alonso", \
             "institution": "Oxford University", \
             "email" :"david.alonso@physics.ox.ac.uk"}, \
+            {"first_name" :"Andreu", \
+            "last_name": "Font-Ribera", \
+            "institution": "Institut de Física d’Altes Energies ", \
+            "email" :"afont@ifae.es"}, \
             ]
 
         for person in people:
@@ -67,11 +71,28 @@ class Command(BaseCommand):
             "access": "Slack, DESI Transient Outputs",
             "active": True}
 
+        try:
+            p1 = Proposal.objects.create(**proposal)
+            p1.project.add(Project.objects.get(id=19))
+            p1.project.add(Project.objects.get(id=75))
+            p1.collaborators.add(Person.objects.get(first_name='David',last_name='Cinabro'))
+            p1.collaborators.add(Person.objects.get(first_name='David',last_name='Moutard'))
+            p1.collaborators.add(Person.objects.get(first_name='Robert',last_name='Carr'))
+        except:
+            pass
 
-        p1 = Proposal.objects.create(**proposal)
-        p1.project.add(Project.objects.get(id=19))
-        p1.project.add(Project.objects.get(id=75))
-        p1.collaborators.add(Person.objects.get(first_name='David',last_name='Cinabro'))
-        p1.collaborators.add(Person.objects.get(first_name='David',last_name='Moutard'))
-        p1.collaborators.add(Person.objects.get(first_name='Robert',last_name='Carr'))        
+        proposal= {"id":1, "sponsor": Person.objects.get(first_name='Andreu',last_name='Font-Ribera'), \
+            "title": "London Mocks",
+            "granted_date": "2019-06-19",
+            "duration": "1 year",
+            "active": False}
+
+
+        try:
+            p1 = Proposal.objects.create(**proposal)
+            p1.project.add(Project.objects.get(id=15))
+            p1.collaborators.add(Person.objects.get(first_name='David',last_name='Alonso'))
+        except:
+            pass
+
 
