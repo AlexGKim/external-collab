@@ -17,6 +17,7 @@ class Person(models.Model):
         return "%s %s" % (self.first_name, self.last_name)
 
 class Proposal(models.Model):
+    id = models.PositiveSmallIntegerField(primary_key=True)
     sponsor = models.ForeignKey(Person, on_delete=models.CASCADE)
     collaborators =  models.ManyToManyField('Person', related_name='proposals')
     title = models.CharField(max_length=200)
