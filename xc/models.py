@@ -4,9 +4,6 @@ from django.core.validators import validate_comma_separated_integer_list
 # from django_postgres_extensions.models.fields import ArrayField
 from django.utils import timezone
 
-###
-Deprecated: use Sponsor, SponsoredUser?
-###
 class Person(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -37,9 +34,6 @@ class Proposal(models.Model):
     def __str__(self):
         return self.title
 
-###
-Deprecated: use Project
-###
 class Project(models.Model):
     title = models.CharField(max_length=200, null=True, blank=True)
     url = models.URLField()
